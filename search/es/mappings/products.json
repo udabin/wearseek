@@ -1,0 +1,29 @@
+{
+    "settings": {
+      "index": { "knn": true },
+      "analysis": {
+        "analyzer": {
+          "ko_std": { "type": "standard", "stopwords": "_none_" }
+        }
+      }
+    },
+    "mappings": {
+      "properties": {
+        "source":        { "type": "keyword" },
+        "title":         { "type": "text", "analyzer": "ko_std" },
+        "brand":         { "type": "keyword" },
+        "price":         { "type": "float" },
+        "currency":      { "type": "keyword" },
+        "category_std":  { "type": "keyword" },
+        "color_std":     { "type": "keyword" },
+        "size_std":      { "type": "keyword" },
+        "url":           { "type": "keyword", "index": false },
+        "image_url":     { "type": "keyword", "index": false },
+        "in_stock":      { "type": "boolean" },
+        "popular_score": { "type": "float" },
+        "title_vector":  { "type": "dense_vector", "dims": 384, "index": true, "similarity": "cosine" },
+        "updated_at":    { "type": "date" }
+      }
+    }
+  }
+  

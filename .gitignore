@@ -1,0 +1,35 @@
+# ==== OS / Editor ====
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.code-workspace
+
+# ==== Global caches / logs ====
+*.log
+logs/
+tmp/
+.cache/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+
+# ==== Git ====
+# (note) This file ignores README.example.md as requested
+README.example.md
+
+# ==== Env files ====
+.env
+.env.*
+!/.env.example
+
+# ==== Project data / artifacts ====
+data/
+datasets/
+outputs/
+
+# ==== Notebooks ====
+**/.ipynb_checkpoint_**
