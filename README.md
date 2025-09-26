@@ -84,7 +84,8 @@ PYTHONUNBUFFERED=1
 ---
 
 ## 🚀 빠른 시작 (Docker Compose)
-### 1) 컨테이너 기동 (infra 폴더에서)
+```
+1) 컨테이너 기동 (infra 폴더에서)
 cd infra
 docker compose up -d
 
@@ -95,6 +96,7 @@ docker compose logs -f backend
 
 Mac에서 바인드 마운트 경로는 기본적으로 ~/(사용자 홈) 하위만 허용됩니다.
 홈 외 경로를 쓰면 Docker Desktop > Settings > Resources > File Sharing에 추가하세요.
+```
 
 ## 📥 데이터 적재(ETL) → 인덱싱
 ```
