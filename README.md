@@ -84,11 +84,11 @@ PYTHONUNBUFFERED=1
 ---
 
 ## 🚀 빠른 시작 (Docker Compose)
-# 1) 컨테이너 기동 (infra 폴더에서)
+### 1) 컨테이너 기동 (infra 폴더에서)
 cd infra
 docker compose up -d
 
-# 2) 상태 확인
+### 2) 상태 확인
 docker compose ps
 docker compose logs -f elasticsearch
 docker compose logs -f backend
@@ -97,19 +97,19 @@ Mac에서 바인드 마운트 경로는 기본적으로 ~/(사용자 홈) 하위
 홈 외 경로를 쓰면 Docker Desktop > Settings > Resources > File Sharing에 추가하세요.
 
 ## 📥 데이터 적재(ETL) → 인덱싱
-# 컨테이너 진입
+### 컨테이너 진입
 docker compose exec backend bash
 
-# 1) 수집
+### 1) 수집
 python -m app.etl.ingest_shop --query "반팔 티셔츠" --limit 200 --out /data/raw/naver
 
-# 2) 정규화
+### 2) 정규화
 python -m app.etl.normalize --in_path /data/raw/naver --out_path /data/norm/naver
 
-# 3) 중복 제거
+### 3) 중복 제거
 python -m app.etl.dedupe --in_path /data/norm/naver --out_file /data/stage/products.jsonl
 
-# 4) 인덱싱 (ES 매핑 적용 + 임베딩 벡터 생성)
+### 4) 인덱싱 (ES 매핑 적용 + 임베딩 벡터 생성)
 python -m app.etl.indexer --src_file /data/stage/products.jsonl --mapping_path /search/es/mappings/products.json
 
 
