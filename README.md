@@ -13,8 +13,8 @@
 - **확장**: Cross-Encoder 재랭킹, 이미지 임베딩(CLIP/SigLIP), LTR, 개인화
 
 ---
-
-## 🧱 아키텍처 개요
+```
+🧱 아키텍처 개요
 Naver Shopping API
         │
         ▼
@@ -29,10 +29,10 @@ Naver Shopping API
                                         ▲
                                         │
                                Next.js (optional)
-
+```
 ---
-
-## 📁 폴더 구조
+```
+📁 폴더 구조
 wearseek/
   backend/
     app/
@@ -56,7 +56,7 @@ wearseek/
     mapping.md
   .env.example
   README.md   
-
+```
 ---
 
 ## ✅ 사전 준비
