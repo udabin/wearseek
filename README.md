@@ -65,7 +65,7 @@ wearseek/
 3. 프로젝트 루트에 `.env` 생성 (아래 예시 참고)
 
 ### `.env` 예시
-```ini
+```
 # NAVER OPEN API
 NAVER_CLIENT_ID=__PUT_YOURS__
 NAVER_CLIENT_SECRET=__PUT_YOURS__
@@ -111,9 +111,9 @@ python -m app.etl.dedupe --in_path /data/norm/naver --out_file /data/stage/produ
 # 4) 인덱싱 (ES 매핑 적용 + 임베딩 벡터 생성)
 python -m app.etl.indexer --src_file /data/stage/products.jsonl --mapping_path /search/es/mappings/products.json
 
-exit
+```
 
-🔎 API 사용법
+## 🔎 API 사용법
 - 헬스체크
 GET http://localhost:8000/api/health
 - 검색
@@ -121,11 +121,11 @@ GET http://localhost:8000/api/search?q=검정 오버핏 티셔츠&size=20
 - 유사 아이템
 GET http://localhost:8000/api/similar?id=<document_id>&size=12
 
-🧪 오프라인 평가(ML 강조 포인트)
+## 🧪 오프라인 평가(ML 강조 포인트)
 - search/notebooks/01_embedding_eval.ipynb: 한국어/다국어 임베딩 비교 (Recall@K, MRR@10)
 - search/notebooks/02_rerank_offline.ipynb: BM25 vs Hybrid vs Hybrid+Cross-Encoder의 NDCG@10 비교
 - search/notebooks/03_ltr_dataset.ipynb: 클릭 로그 스키마 → LTR 피처셋 구성 → LightGBM LTR 1차
 
-🧾 라이선스
+## 🧾 라이선스
 - 해당 저장소는 학습/개인 포트폴리오 목적을 우선합니다.
 - 네이버 오픈API, 외부 모델/데이터 사용 시 각 서비스 약관을 반드시 준수하세요.
