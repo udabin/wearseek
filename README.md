@@ -89,7 +89,7 @@ PYTHONUNBUFFERED=1
 cd infra
 docker compose up -d
 
-### 2) 상태 확인
+2) 상태 확인
 docker compose ps
 docker compose logs -f elasticsearch
 docker compose logs -f backend
