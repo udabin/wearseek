@@ -79,10 +79,11 @@ EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 RERANK_MODEL=cross-encoder/ms-marco-MiniLM-L-6-v2
 
 PYTHONUNBUFFERED=1
+```
 
 ---
 
-🚀 빠른 시작 (Docker Compose)
+## 🚀 빠른 시작 (Docker Compose)
 # 1) 컨테이너 기동 (infra 폴더에서)
 cd infra
 docker compose up -d
@@ -95,7 +96,7 @@ docker compose logs -f backend
 Mac에서 바인드 마운트 경로는 기본적으로 ~/(사용자 홈) 하위만 허용됩니다.
 홈 외 경로를 쓰면 Docker Desktop > Settings > Resources > File Sharing에 추가하세요.
 
-📥 데이터 적재(ETL) → 인덱싱
+## 📥 데이터 적재(ETL) → 인덱싱
 # 컨테이너 진입
 docker compose exec backend bash
 
@@ -111,7 +112,6 @@ python -m app.etl.dedupe --in_path /data/norm/naver --out_file /data/stage/produ
 # 4) 인덱싱 (ES 매핑 적용 + 임베딩 벡터 생성)
 python -m app.etl.indexer --src_file /data/stage/products.jsonl --mapping_path /search/es/mappings/products.json
 
-```
 
 ## 🔎 API 사용법
 - 헬스체크
